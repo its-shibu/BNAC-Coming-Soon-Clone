@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>BNAC</title>
+    <link rel="shortcut icon" href="images/logoicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background: url(images/london\ 1.png);
+            background: url(images/london\ 1.png) no-repeat center center / cover;
             margin: 0;
             padding: 0;
             display: flex;
@@ -23,6 +23,7 @@
 
         .container {
             text-align: center;
+            padding: 20px;
         }
 
         .animated-text {
@@ -54,6 +55,34 @@
             opacity: 1;
             transform: translateY(0);
         }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 10vw !important; 
+                line-height: 1.2 !important; 
+            }
+
+            p {
+                font-size: 4vw; 
+            }
+
+            .icon {
+                font-size: 6vw; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 12vw !important; 
+            }
+
+            p {
+                font-size: 5vw; 
+            }
+
+            .icon {
+                font-size: 8vw; 
+            }
+        }
     </style>
 </head>
 
@@ -73,23 +102,15 @@
         document.addEventListener("DOMContentLoaded", function () {
             const animatedTexts = document.querySelectorAll('.animated-text');
             const icons = document.querySelectorAll('.icon');
-
-            // Function to add the 'visible' class to elements
             function animateElements(elements, delay) {
                 elements.forEach((element, index) => {
                     setTimeout(() => {
                         element.classList.add('visible');
-                    }, index * delay); // Delay each element's animation
+                    }, index * delay); 
                 });
             }
-
-            // Animate text elements with a delay of 500ms
             animateElements(animatedTexts, 500);
-
-            // Animate icons with a delay of 300ms
             animateElements(icons, 300);
-
-            // Add hover effects to icons
             icons.forEach(icon => {
                 icon.addEventListener('mouseenter', () => {
                     icon.style.transform = 'translateY(-5px)';
